@@ -1,0 +1,312 @@
+/* ====================================
+   SERVICE DETAIL PAGE STYLES
+   ==================================== */
+
+/* Offerings Grid */
+.offerings-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.offering-card {
+    padding: var(--spacing-xl);
+    text-align: center;
+}
+
+.offering-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-silver);
+    border-radius: var(--radius-md);
+}
+
+.offering-icon svg {
+    width: 30px;
+    height: 30px;
+    color: var(--black-primary);
+}
+
+.offering-card h3 {
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--silver-light);
+    margin-bottom: var(--spacing-sm);
+}
+
+.offering-card p {
+    color: var(--silver-medium);
+    line-height: 1.6;
+}
+
+/* Process Timeline */
+.process-timeline {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 60px;
+}
+
+.process-timeline::before {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 20px;
+    bottom: 80px;
+    width: 2px;
+    background: linear-gradient(
+        180deg,
+        var(--primary-silver) 0%,
+        var(--silver-medium) 50%,
+        var(--silver-dark) 100%
+    );
+}
+
+.process-step {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    align-items: start;
+}
+
+.process-step:last-child {
+    margin-bottom: 0;
+}
+
+.process-step:last-child .process-timeline::before {
+    display: none;
+}
+
+.process-number {
+    position: absolute;
+    left: -60px;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-silver);
+    color: var(--black-primary);
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-bold);
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(192, 192, 192, 0.3);
+}
+
+.process-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(192, 192, 192, 0.08) 0%, rgba(168, 168, 168, 0.04) 100%);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+    margin-top: -5px;
+}
+
+.process-icon svg {
+    width: 24px;
+    height: 24px;
+    color: var(--primary-silver);
+}
+
+.process-content {
+    background: linear-gradient(135deg, rgba(192, 192, 192, 0.05) 0%, rgba(168, 168, 168, 0.02) 100%);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    transition: all var(--transition-base);
+    flex: 1;
+}
+
+.process-content:hover {
+    background: linear-gradient(135deg, rgba(192, 192, 192, 0.08) 0%, rgba(168, 168, 168, 0.04) 100%);
+    border-color: rgba(192, 192, 192, 0.2);
+    transform: translateX(5px);
+}
+
+.process-content h3 {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--silver-light);
+    margin-bottom: var(--spacing-sm);
+}
+
+.process-content p {
+    color: var(--silver-medium);
+    line-height: 1.7;
+}
+
+/* Technology Stack */
+.tech-stack-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tech-category {
+    margin-bottom: var(--spacing-xl);
+}
+
+.tech-category:last-child {
+    margin-bottom: 0;
+}
+
+.tech-category h3 {
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--silver-light);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.tech-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    justify-content: center;
+}
+
+.tech-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1.25rem;
+    background: linear-gradient(135deg, rgba(192, 192, 192, 0.05) 0%, rgba(168, 168, 168, 0.02) 100%);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-full);
+    color: var(--silver-light);
+    font-size: 0.9rem;
+    font-weight: var(--font-weight-medium);
+    transition: all var(--transition-base);
+}
+
+.tech-pill:hover {
+    background: linear-gradient(135deg, rgba(192, 192, 192, 0.12) 0%, rgba(168, 168, 168, 0.08) 100%);
+    border-color: var(--primary-silver);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(192, 192, 192, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1199px) {
+    .offerings-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .offerings-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .offering-card {
+        padding: 1.5rem;
+    }
+    
+    .offering-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .offering-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .offering-card h3 {
+        font-size: 1.125rem;
+    }
+    
+    .process-timeline {
+        padding-left: 50px;
+    }
+    
+    .process-timeline::before {
+        left: 14px;
+    }
+    
+    .process-step {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+        padding-left: 0;
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .process-number {
+        left: -50px;
+        width: 32px;
+        height: 32px;
+        font-size: 0.875rem;
+    }
+    
+    .process-icon {
+        display: none;
+    }
+    
+    .process-content {
+        padding: 1.25rem;
+    }
+    
+    .process-content h3 {
+        font-size: 1.25rem;
+    }
+    
+    .tech-category {
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .tech-category h3 {
+        text-align: left;
+        font-size: 1.125rem;
+    }
+    
+    .tech-pills {
+        justify-content: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .tech-pill {
+        padding: 0.4rem 1rem;
+        font-size: 0.8125rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .process-timeline {
+        padding-left: 40px;
+    }
+    
+    .process-timeline::before {
+        left: 12px;
+    }
+    
+    .process-number {
+        left: -40px;
+        width: 28px;
+        height: 28px;
+        font-size: 0.75rem;
+    }
+    
+    .process-content {
+        padding: 1rem;
+    }
+    
+    .offering-card {
+        padding: 1.25rem;
+    }
+    
+    .tech-pill {
+        padding: 0.35rem 0.875rem;
+        font-size: 0.75rem;
+    }
+}

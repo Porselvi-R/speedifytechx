@@ -1,0 +1,412 @@
+/* ====================================
+   MOBILE ALIGNMENT & RESPONSIVE FIXES
+   ==================================== */
+
+/* Prevent horizontal scroll from off-screen nav panel */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+/* Mobile Base Styles */
+@media (max-width: 767px) {
+
+    html, body {
+        overflow-x: hidden;
+    }
+
+    /* Container Padding */
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        max-width: 100%;
+    }
+
+    /* ====================================
+       NAVIGATION MOBILE
+       ==================================== */
+    .navbar {
+        padding: 0.65rem 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .navbar-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1rem;
+        width: 100%;
+        gap: 0.5rem;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1rem;
+        flex-shrink: 0;
+        z-index: 1001;
+    }
+
+    .logo img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .logo span {
+        font-size: 0.95rem;
+    }
+
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-left: auto;
+        flex-shrink: 0;
+        z-index: 1001;
+    }
+
+    .nav-actions .btn-primary {
+        padding: 0.45rem 0.85rem;
+        font-size: 0.78rem;
+        white-space: nowrap;
+        border-radius: 6px;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: 0.4rem;
+        flex-shrink: 0;
+        z-index: 1001;
+        cursor: pointer;
+    }
+
+    .hamburger span {
+        width: 20px;
+        height: 2px;
+    }
+
+    /* Nav links — fully off screen until active */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -110%;
+        width: 70%;
+        max-width: 260px;
+        height: 100vh;
+        height: 100dvh;
+        background: linear-gradient(135deg, rgba(18, 18, 18, 0.99) 0%, rgba(8, 8, 8, 0.99) 100%);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 80px 1.25rem 2rem;
+        gap: 0.75rem;
+        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: -8px 0 24px rgba(0, 0, 0, 0.6);
+        z-index: 1000;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+        padding: 0.6rem 0;
+        width: 100%;
+        text-align: left;
+        display: block;
+    }
+
+    /* ====================================
+       TYPOGRAPHY
+       ==================================== */
+    h1, .hero-title {
+        font-size: 1.85rem;
+        line-height: 1.2;
+    }
+
+    h2, .section-title {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    .large-text {
+        font-size: 0.95rem;
+    }
+
+    .hero-subtitle,
+    .section-description {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .hero-title,
+    .section-title {
+        text-align: center;
+    }
+
+    /* ====================================
+       BUTTONS
+       ==================================== */
+    .btn {
+        padding: 0.65rem 1.25rem;
+        font-size: 0.875rem;
+    }
+
+    .btn-large {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
+        align-items: center;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        max-width: 260px;
+        justify-content: center;
+        padding: 0.65rem 1.25rem;
+        font-size: 0.875rem;
+    }
+
+    /* ====================================
+       LAYOUT
+       ==================================== */
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        padding: 1.5rem 0.5rem;
+    }
+
+    .two-column-layout {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .column-left,
+    .column-right {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* ====================================
+       GRIDS
+       ==================================== */
+    .services-grid,
+    .offerings-grid,
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+    }
+
+    .stat-item {
+        text-align: center;
+    }
+
+    .contact-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    /* ====================================
+       CARDS
+       ==================================== */
+    .service-card,
+    .offering-card,
+    .portfolio-card,
+    .team-card {
+        text-align: center;
+        padding: 1.25rem;
+    }
+
+    /* ====================================
+       FOOTER
+       ==================================== */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: left;
+        gap: 1.5rem;
+    }
+
+    .footer-links,
+    .footer-contact {
+        align-items: flex-start;
+    }
+
+    .social-links {
+        justify-content: flex-start;
+    }
+
+    /* ====================================
+       FORMS
+       ==================================== */
+    .contact-form-wrapper {
+        flex-direction: column;
+    }
+
+    .contact-form-content,
+    .contact-form-mascot {
+        width: 100%;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    /* ====================================
+       MISC
+       ==================================== */
+    .process-timeline {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .process-step {
+        text-align: center;
+    }
+
+    .cta-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .cta-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem;
+    }
+
+    .cta-actions .btn {
+        width: 100%;
+        max-width: 260px;
+    }
+
+    .portfolio-marquee-container {
+        height: 260px !important;
+    }
+
+    .portfolio-column {
+        min-width: 110px;
+    }
+
+    .hero-visual,
+    .hero-image-wrapper {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .hero-visual img,
+    .hero-visual video {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .section-padding {
+        padding: 2.5rem 0;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    .services-grid,
+    .offerings-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* Small Mobile (320px–480px) */
+@media (max-width: 480px) {
+
+    h1, .hero-title {
+        font-size: 1.6rem;
+    }
+
+    h2, .section-title {
+        font-size: 1.35rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .btn {
+        padding: 0.6rem 1.1rem;
+        font-size: 0.825rem;
+    }
+
+    .navbar {
+        padding: 0.5rem 0;
+    }
+
+    .logo img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .logo span {
+        font-size: 0.875rem;
+    }
+
+    .nav-actions .btn-primary {
+        padding: 0.4rem 0.7rem;
+        font-size: 0.75rem;
+    }
+
+    .section-padding {
+        padding: 2rem 0;
+    }
+}
